@@ -33,12 +33,12 @@ export default function App() {
         speed={0.3}
       >
         <div className="max-w-[1200px] mx-auto">
-          <SectionTitle title="Creative / Assistant Director" className="mb-12" />
+          <SectionTitle
+            title="Creative / Assistant Director"
+            className="mb-12"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <PortfolioCard
-              image={imgImage38}
-              className="h-[513px]"
-            />
+            <PortfolioCard image={imgImage38} className="h-[513px]" />
             <PortfolioCard
               image={imgImage7}
               caption="From concept to final cut — directing short films, branded stories, and ad narratives."
@@ -57,6 +57,8 @@ export default function App() {
               alt="Available for Direction - Acting - Casting"
               className="w-full h-full object-cover"
             />
+            <div className="absolute bottom-0 left-0 right-0 h-[40%] backdrop-blur-[2px]" />
+
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black/80" />
             <div className="absolute inset-0 flex flex-col items-center justify-between p-6 md:p-12">
               <div className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-black/10 to-white/10 rounded-[24px] border border-white/20 backdrop-blur-md">
@@ -66,14 +68,18 @@ export default function App() {
               </div>
               <div className="max-w-4xl text-center">
                 <p className="font-['PP_Neue_Montreal:Book',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px] mb-2">
-                  On-set energy, candid moments, and the people behind the scenes. Every interaction builds a story.
-                </p>
-                <p className="font-['PP_Neue_Montreal:Book',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
-                  Where real conversations meet performance — capturing genuine moments from productions, sets, and storyrooms.
+                  On-set energy, candid moments, and the people behind the
+                  scenes. Every interaction builds a story. Where real
+                  conversations meet performance — capturing genuine moments
+                  from productions, sets, and storyrooms.
                 </p>
               </div>
             </div>
           </div>
+          {/* Bottom Gradient with Blur Effect */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+
+          {/* Blur mask effect at bottom */}
         </div>
       </ParallaxSection>
 
@@ -114,20 +120,20 @@ export default function App() {
         speed={0.3}
       >
         <div className="max-w-[1200px] mx-auto">
-          <SectionTitle title="Casting / Production management" className="mb-12" />
+          <SectionTitle
+            title="Casting / Production management"
+            className="mb-12"
+          />
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* First row */}
             <div className="md:col-span-7">
-              <PortfolioCard
-                image={imgImage13}
-                className="h-[514px]"
-              />
+              <PortfolioCard image={imgImage13} className="h-[400px]" />
             </div>
             <div className="md:col-span-5">
               <PortfolioCard
                 image={imgImage15}
                 caption="Assembling the right faces. Building the right crew. Shaping every detail behind the scenes."
-                className="h-[514px]"
+                className="h-[400px]"
               />
             </div>
 
@@ -136,14 +142,11 @@ export default function App() {
               <PortfolioCard
                 image={imgImage16}
                 caption="Creative logistics — organizing teams, talent, and set workflows."
-                className="h-[514px]"
+                className="h-[400px]"
               />
             </div>
-            <div className="md:col-span-9">
-              <PortfolioCard
-                image={imgImage14}
-                className="h-[514px]"
-              />
+            <div className="md:col-span-9 object-cover">
+              <PortfolioCard image={imgImage14} className="h-[400px] " />
             </div>
           </div>
         </div>
@@ -152,12 +155,14 @@ export default function App() {
       {/* Final CTA Section */}
       <ParallaxSection className="py-24 px-8 md:px-[120px]" speed={0.25}>
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
             {/* Main heading for mobile */}
-            <div className="md:hidden col-span-1 text-center mb-6">
-              <h2 className="font-['Inter:Light',sans-serif] text-[40px] md:text-[56px] text-white leading-tight mb-6">
-                Let's Work,<br />
-                I'm In,<br />
+            <div className="md:hidden col-span-1 text-center mb-6 ">
+              <h2 className="font-['Inter:Bold',sans-serif] text-[40px] md:text-[56px] text-white leading-tight mb-6 ">
+                Let's Work,
+                <br />
+                I'm In,
+                <br />
                 Let's Create
               </h2>
               <button
@@ -181,33 +186,20 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
-                    Stills that reflect presence, texture, and natural style. Capturing moments off-set and off-guard.
+                    Stills that reflect presence, texture, and natural style.
+                    Capturing moments off-set and off-guard.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="md:col-span-3">
-              <div className="relative h-[400px] md:h-[630px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)]">
-                <img
-                  src={imgImage24}
-                  alt="I'm In"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
-                    Mood-led fashion shots. Exploring identity, styling, and cinematic energy through lens and lighting.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Floating CTA Text - Desktop only */}
             <div className="hidden md:flex md:col-span-3 items-center">
               <div className="text-center md:text-left">
-                <h2 className="font-['Inter:Light',sans-serif] text-[56px] text-white leading-tight mb-8">
-                  Let's Work,<br />
-                  I'm In,<br />
+                <h2 className="font-['Inter:Light',sans-serif] text-[56px] text-white leading-tight mb-8 ">
+                  Let's Work,
+                  <br />
+                  I'm In,
+                  <br />
                   Let's Create
                 </h2>
                 <button
@@ -221,15 +213,28 @@ export default function App() {
                 </button>
               </div>
             </div>
+            <div className="md:col-span-3">
+              <div className="relative h-[400px] md:h-[630px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)]">
+                <img
+                  src={imgImage24}
+                  alt="I'm In"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
+                    Mood-led fashion shots. Exploring identity, styling, and
+                    cinematic energy through lens and lighting.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </ParallaxSection>
 
       {/* Footer / About Section */}
-      <section
-        id="about"
-        className="py-24 px-8 md:px-[120px] bg-black"
-      >
+      <section id="about" className="py-24 px-8 md:px-[120px] bg-black">
         <div className="max-w-[1200px] mx-auto">
           <div className="bg-[#111111] rounded-[18px] p-6 md:p-12 shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)] relative">
             {/* Vertical text on left */}
@@ -247,7 +252,13 @@ export default function App() {
 
               {/* Bio */}
               <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white leading-relaxed md:leading-[37px]">
-                I'm a Mumbai-based model and aspiring actor, passionate about visual storytelling and on-screen performance. My work focuses on capturing emotion, subtlety, and mood — whether in portrait sessions, editorial campaigns, or narrative film frames. I love experimenting with characters, expressions, and atmospheric lighting, constantly exploring new ways to reflect personality and presence.
+                I'm a Mumbai-based model and aspiring actor, passionate about
+                visual storytelling and on-screen performance. My work focuses
+                on capturing emotion, subtlety, and mood — whether in portrait
+                sessions, editorial campaigns, or narrative film frames. I love
+                experimenting with characters, expressions, and atmospheric
+                lighting, constantly exploring new ways to reflect personality
+                and presence.
               </p>
 
               {/* Details */}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import imgImage2 from "figma:asset/a646bbb4d6fcdaf85d12e4939e9e530c83df9f16.png";
+import heroImg from "figma:asset/a646bbb4d6fcdaf85d12e4939e9e530c83df9f16.png";
+import arrowIcon from "figma:asset/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
 
 export function HeroSection() {
   const [revealComplete, setRevealComplete] = useState(false);
@@ -55,7 +56,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         {/* background now has slight mobile parallax via inline transform */}
         <motion.img
-          src={imgImage2}
+          src={heroImg}
           alt="Bharat Polkam"
           className="w-full h-full object-cover"
           aria-hidden={!revealComplete}
@@ -65,8 +66,11 @@ export function HeroSection() {
             transition: "transform 220ms linear",
           }}
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/80" />
+        {/* Bottom Gradient with Blur Effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+
+      {/* Blur mask effect at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-[40%] backdrop-blur-[2px]" />
       </div>
 
       {/* Vertical Flip Panels Animation */}
@@ -142,7 +146,7 @@ export function HeroSection() {
             </motion.p>
             </div>
             
-            <div className="flex items-end justify-end pb-10">
+            <div className="flex items-end justify-end pb-10 md:pb-0 ">
              <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{
@@ -150,9 +154,21 @@ export function HeroSection() {
                 y: revealComplete ? 0 : 20,
               }}
               transition={{ duration: 0.8, delay: 2.2 }}
-              className=" font-['PP_Neue_Montreal:Book',sans-serif] text-base md:text-lg lg:text-[22px] text-white/80 leading-relaxed tracking-wide whitespace-nowrap"
+              className="font-['PP_Neue_Montreal:Book',sans-serif] text-xs md:text-sm lg:text-lg text-white/80 leading-relaxed tracking-wide whitespace-nowrap"
             >
-              {isTouch ? "Tap to Explore More" : "Scroll to Explore More"}
+              {isTouch ? (
+                <span role="button" aria-label="Tap to explore">
+                  <img
+                    src={arrowIcon}
+                    alt=""
+                    className="w-[20px] h-[20px] animate-bounce inline-block mr-2 md:mr-3 rotate-90 "
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">Tap to explore</span>
+                </span>
+              ) : (
+                "Scroll to Explore ↓"
+              )}
             </motion.p>
             </div>
 
