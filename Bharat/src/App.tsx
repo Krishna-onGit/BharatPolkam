@@ -1,10 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { ParallaxSection } from "./components/ParallaxSection";
-import { AnimatedSection } from "./components/AnimatedSection";
 import { PortfolioCard } from "./components/PortfolioCard";
 import { SectionTitle } from "./components/SectionTitle";
-import { motion } from "motion/react";
 
 // Import all images from Figma
 import imgImage38 from "figma:asset/84568252777cba889e4d91c23d7a6b438b519d74.png";
@@ -20,9 +19,14 @@ import imgImage14 from "figma:asset/25d476347a4ee4600a008162c0336102fcab4105.png
 import imgImage18 from "figma:asset/add77818516752023846d7fa94306958206ce445.png";
 import imgImage24 from "figma:asset/8e649e49be51e80b45fdc2be8bd19294a2140f14.png";
 
-export default function App() {
+// Import Pages (now lighter)
+import { Direction } from "./pages/Direction";
+import { Performance } from "./pages/Performance";
+import { Production } from "./pages/Production";
+
+function Home() {
   return (
-    <div className="bg-black min-h-screen">
+    <>
       <Navbar />
       <HeroSection />
 
@@ -78,8 +82,6 @@ export default function App() {
           </div>
           {/* Bottom Gradient with Blur Effect */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
-
-          {/* Blur mask effect at bottom */}
         </div>
       </ParallaxSection>
 
@@ -292,6 +294,21 @@ export default function App() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="bg-black min-h-screen">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/direction" element={<Direction />} />
+          <Route path="/performance" element={<Performance />} />
+          <Route path="/production" element={<Production />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
