@@ -67,10 +67,10 @@ export function HeroSection() {
           }}
         />
         {/* Bottom Gradient with Blur Effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
 
-      {/* Blur mask effect at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[40%] backdrop-blur-[2px]" />
+        {/* Blur mask effect at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-[40%] backdrop-blur-[2px]" />
       </div>
 
       {/* Vertical Flip Panels Animation */}
@@ -119,7 +119,7 @@ export function HeroSection() {
                 opacity: revealComplete ? 1 : 0,
                 y: revealComplete ? 0 : 30,
               }}
-              transition={{ duration: 0.8, delay: 2.0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="font-['PP_Neue_Montreal:Book',sans-serif] text-4xl md:text-6xl lg:text-[82px] text-white mb-4"
               // small tap feedback for touch devices
               whileTap={{ scale: 0.98 }}
@@ -137,23 +137,23 @@ export function HeroSection() {
                 opacity: revealComplete ? 1 : 0,
                 y: revealComplete ? 0 : 20,
               }}
-              transition={{ duration: 0.8, delay: 2.2 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="font-['PP_Neue_Montreal:Book',sans-serif] text-base md:text-lg lg:text-[22px] text-white/80 max-w-2xl leading-relaxed tracking-wide"
               whileTap={{ scale: 0.995 }}
             >
               Acting, directing, creating — from narrative to nuance. <br />
               Crafting visuals where emotion meets execution.
             </motion.p>
-            </div>
-            
-            <div className="flex items-end justify-end pb-10 md:pb-0 ">
-             <motion.p
+          </div>
+
+          <div className="flex items-end justify-end pb-10 md:pb-0 ">
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: revealComplete ? 1 : 0,
                 y: revealComplete ? 0 : 20,
               }}
-              transition={{ duration: 0.8, delay: 2.2 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="font-['PP_Neue_Montreal:Book',sans-serif] text-xs md:text-sm lg:text-lg text-white/80 leading-relaxed tracking-wide whitespace-nowrap"
             >
               {isTouch ? (
@@ -170,7 +170,7 @@ export function HeroSection() {
                 "Scroll to Explore ↓"
               )}
             </motion.p>
-            </div>
+          </div>
 
           {/* extra details revealed on tap for mobile (or remain visible on desktop) */}
           {/*
@@ -179,7 +179,7 @@ export function HeroSection() {
           */}
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={ showDetails ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 } }
+            animate={showDetails ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
             transition={{ duration: 0.35 }}
             className="overflow-hidden max-w-2xl text-white/70 mt-4"
             aria-hidden={!showDetails}

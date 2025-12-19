@@ -6,9 +6,10 @@ interface PortfolioCardProps {
   caption?: string;
   className?: string;
   tooltip?: string;
+  onClick?: () => void;
 }
 
-export function PortfolioCard({ image, caption, className = "", tooltip = "View more" }: PortfolioCardProps) {
+export function PortfolioCard({ image, caption, className = "", tooltip = "View more", onClick }: PortfolioCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -16,7 +17,8 @@ export function PortfolioCard({ image, caption, className = "", tooltip = "View 
       className={`relative overflow-hidden rounded-[18px] shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)] cursor-pointer group ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.03 }}
+      onClick={onClick}
+      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Background Image */}

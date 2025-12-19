@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { ParallaxSection } from "./components/ParallaxSection";
@@ -25,6 +25,8 @@ import { Performance } from "./pages/Performance";
 import { Production } from "./pages/Production";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -40,13 +42,19 @@ function Home() {
           <SectionTitle
             title="Creative / Assistant Director"
             className="mb-12"
+            onClick={() => navigate('/direction')}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <PortfolioCard image={imgImage38} className="h-[513px]" />
+            <PortfolioCard
+              image={imgImage38}
+              className="h-[513px]"
+              onClick={() => navigate('/direction')}
+            />
             <PortfolioCard
               image={imgImage7}
               caption="From concept to final cut — directing short films, branded stories, and ad narratives."
               className="h-[513px]"
+              onClick={() => navigate('/direction')}
             />
           </div>
         </div>
@@ -92,23 +100,30 @@ function Home() {
         speed={0.35}
       >
         <div className="max-w-[1200px] mx-auto">
-          <SectionTitle title="On Screen" className="mb-12" />
+          <SectionTitle
+            title="On Screen"
+            className="mb-12"
+            onClick={() => navigate('/performance')}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <PortfolioCard
               image={imgImage35}
               caption="Versatility and presence from subtle to striking — roles across film, series, ads, and music videos."
               className="h-[644px]"
+              onClick={() => navigate('/performance')}
             />
             <div className="flex flex-col gap-6">
               <PortfolioCard
                 image={imgImage25}
                 caption="Performance is instinct — shaped by character and camera."
                 className="h-[310px]"
+                onClick={() => navigate('/performance')}
               />
               <PortfolioCard
                 image={imgImage22}
                 caption="A screen presence shaped by stillness, expression, and narrative flow."
                 className="h-[310px]"
+                onClick={() => navigate('/performance')}
               />
             </div>
           </div>
@@ -125,17 +140,23 @@ function Home() {
           <SectionTitle
             title="Casting / Production management"
             className="mb-12"
+            onClick={() => navigate('/production')}
           />
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* First row */}
             <div className="md:col-span-7">
-              <PortfolioCard image={imgImage13} className="h-[400px]" />
+              <PortfolioCard
+                image={imgImage13}
+                className="h-[400px]"
+                onClick={() => navigate('/production')}
+              />
             </div>
             <div className="md:col-span-5">
               <PortfolioCard
                 image={imgImage15}
                 caption="Assembling the right faces. Building the right crew. Shaping every detail behind the scenes."
                 className="h-[400px]"
+                onClick={() => navigate('/production')}
               />
             </div>
 
@@ -145,10 +166,15 @@ function Home() {
                 image={imgImage16}
                 caption="Creative logistics — organizing teams, talent, and set workflows."
                 className="h-[400px]"
+                onClick={() => navigate('/production')}
               />
             </div>
             <div className="md:col-span-9 object-cover">
-              <PortfolioCard image={imgImage14} className="h-[400px] " />
+              <PortfolioCard
+                image={imgImage14}
+                className="h-[400px] "
+                onClick={() => navigate('/production')}
+              />
             </div>
           </div>
         </div>

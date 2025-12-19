@@ -5,9 +5,12 @@ interface SectionTitleProps {
   className?: string;
 }
 
-export function SectionTitle({ title, className = "" }: SectionTitleProps) {
+export function SectionTitle({ title, className = "", onClick }: SectionTitleProps & { onClick?: () => void }) {
   return (
-    <div className={`flex items-center gap-2 md:gap-3 ${className}`}>
+    <div
+      onClick={onClick}
+      className={`flex items-center gap-2 md:gap-3 ${onClick ? 'cursor-pointer hover:opacity-80 transition-opacity' : ''} ${className}`}
+    >
       <h2 className="font-['PP_Neue_Montreal:Book',sans-serif] text-2xl md:text-[40px] text-white">
         {title}
       </h2>
