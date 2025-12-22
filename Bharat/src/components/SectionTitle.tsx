@@ -1,4 +1,4 @@
-import imgForwardButton from "figma:asset/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
+import imgForwardButton from "../assets/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
 
 interface SectionTitleProps {
   title: string;

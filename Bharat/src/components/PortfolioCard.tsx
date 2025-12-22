@@ -4,12 +4,13 @@ import { motion } from "motion/react";
 interface PortfolioCardProps {
   image: string;
   caption?: string;
-  className?: string;
+  className?: string; // Container class
+  imageClassName?: string; // Image specific class
   tooltip?: string;
   onClick?: () => void;
 }
 
-export function PortfolioCard({ image, caption, className = "", tooltip = "View more", onClick }: PortfolioCardProps) {
+export function PortfolioCard({ image, caption, className = "", imageClassName = "", tooltip = "View more", onClick }: PortfolioCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -26,7 +27,7 @@ export function PortfolioCard({ image, caption, className = "", tooltip = "View 
         <img
           src={image}
           alt={caption || "Portfolio item"}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+          className={`w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 ${imageClassName}`}
         />
       </div>
 
@@ -34,7 +35,12 @@ export function PortfolioCard({ image, caption, className = "", tooltip = "View 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
 
       {/* Blur mask effect at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-[40%] backdrop-blur-[2px]" />
+      <div className="absolute bottom-0 left-0 right-0 h-[50%] backdrop-blur-[2px] transition-all duration-300"
+        style={{
+          maskImage: 'linear-gradient(to top, black, transparent)',
+          WebkitMaskImage: 'linear-gradient(to top, black, transparent)',
+        }}
+      />
 
       {/* Caption */}
       {caption && (
@@ -46,16 +52,18 @@ export function PortfolioCard({ image, caption, className = "", tooltip = "View 
       )}
 
       {/* Tooltip */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
-        transition={{ duration: 0.2 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 pointer-events-none"
-      >
-        <p className="text-white font-['PP_Neue_Montreal:Book',sans-serif] text-sm whitespace-nowrap">
-          {tooltip}
-        </p>
-      </motion.div>
+      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+          transition={{ duration: 0.2 }}
+          className="bg-black/90 backdrop-blur-md px-6 py-3 rounded-full border border-white/20"
+        >
+          <p className="text-white font-['PP_Neue_Montreal:Book',sans-serif] text-sm whitespace-nowrap">
+            {tooltip}
+          </p>
+        </motion.div>
+      </div>
 
       {/* Hover glow effect */}
       <motion.div

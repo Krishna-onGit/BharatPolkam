@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import heroImg from "figma:asset/a646bbb4d6fcdaf85d12e4939e9e530c83df9f16.png";
-import arrowIcon from "figma:asset/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
+import heroImg from "../assets/a646bbb4d6fcdaf85d12e4939e9e530c83df9f16.png";
+import arrowIcon from "../assets/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
 
 export function HeroSection() {
   const [revealComplete, setRevealComplete] = useState(false);
