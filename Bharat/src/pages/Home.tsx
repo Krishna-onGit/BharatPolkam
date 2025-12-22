@@ -44,8 +44,8 @@ export function Home() {
                     {/* Mobile Carousel */}
                     <MobileCarousel
                         items={[
-                            { image: imgImage38, className: "h-[513px]", onClick: () => navigate('/direction') },
-                            { image: imgImage7, caption: "From concept to final cut — directing short films, branded stories, and ad narratives.", className: "h-[513px]", onClick: () => navigate('/direction') }
+                            { image: imgImage38, className: "h-[310px]", onClick: () => navigate('/direction') },
+                            { image: imgImage7, caption: "From concept to final cut — directing short films, branded stories, and ad narratives.", className: "h-[310px]", onClick: () => navigate('/direction') }
                         ]}
                     />
 
@@ -53,13 +53,13 @@ export function Home() {
                     <div className="hidden md:grid md:grid-cols-2 gap-6">
                         <PortfolioCard
                             image={imgImage38}
-                            className="h-[513px]"
+                            className="h-[410px]"
                             onClick={() => navigate('/direction')}
                         />
                         <PortfolioCard
                             image={imgImage7}
                             caption="From concept to final cut — directing short films, branded stories, and ad narratives."
-                            className="h-[513px]"
+                            className="h-[410px]"
                             onClick={() => navigate('/direction')}
                         />
                     </div>
@@ -94,8 +94,6 @@ export function Home() {
                             </div>
                         </div>
                     </div>
-                    {/* Bottom Gradient with Blur Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
                 </div>
             </ParallaxSection>
 
@@ -126,20 +124,20 @@ export function Home() {
                         <PortfolioCard
                             image={imgImage35}
                             caption="Versatility and presence from subtle to striking — roles across film, series, ads, and music videos."
-                            className="h-[513px]"
+                            className="h-[410px]"
                             imageClassName="object-[50%_25%]"
                             onClick={() => navigate('/performance')}
                         />
                         <PortfolioCard
                             image={imgImage25}
                             caption="Performance is instinct — shaped by character and camera."
-                            className="h-[513px]"
+                            className="h-[410px]"
                             onClick={() => navigate('/performance')}
                         />
                         <PortfolioCard
                             image={imgImage22}
                             caption="A screen presence shaped by stillness, expression, and narrative flow."
-                            className="h-[513px]"
+                            className="h-[410px]"
                             onClick={() => navigate('/performance')}
                         />
                     </div>
@@ -162,10 +160,10 @@ export function Home() {
                     {/* Mobile Carousel */}
                     <MobileCarousel
                         items={[
-                            { image: imgImage13, className: "h-[400px]", onClick: () => navigate('/production') },
-                            { image: imgImage15, caption: "Assembling the right faces. Building the right crew. Shaping every detail behind the scenes.", className: "h-[400px]", onClick: () => navigate('/production') },
-                            { image: imgImage16, caption: "Creative logistics — organizing teams, talent, and set workflows.", className: "h-[400px]", onClick: () => navigate('/production') },
-                            { image: imgImage14, className: "h-[400px]", onClick: () => navigate('/production') }
+                            { image: imgImage13, className: "h-[310px]", onClick: () => navigate('/production') },
+                            { image: imgImage15, caption: "Assembling the right faces. Building the right crew. Shaping every detail behind the scenes.", className: "h-[310px]", onClick: () => navigate('/production') },
+                            { image: imgImage16, caption: "Creative logistics — organizing teams, talent, and set workflows.", className: "h-[310px]", onClick: () => navigate('/production') },
+                            { image: imgImage14, className: "h-[310px]", onClick: () => navigate('/production') }
                         ]}
                     />
 
@@ -175,7 +173,7 @@ export function Home() {
                         <div className="md:col-span-7">
                             <PortfolioCard
                                 image={imgImage13}
-                                className="h-[400px]"
+                                className="h-[410px]"
                                 onClick={() => navigate('/production')}
                             />
                         </div>
@@ -183,7 +181,7 @@ export function Home() {
                             <PortfolioCard
                                 image={imgImage15}
                                 caption="Assembling the right faces. Building the right crew. Shaping every detail behind the scenes."
-                                className="h-[400px]"
+                                className="h-[410px]"
                                 onClick={() => navigate('/production')}
                             />
                         </div>
@@ -193,14 +191,14 @@ export function Home() {
                             <PortfolioCard
                                 image={imgImage16}
                                 caption="Creative logistics — organizing teams, talent, and set workflows."
-                                className="h-[400px]"
+                                className="h-[410px]"
                                 onClick={() => navigate('/production')}
                             />
                         </div>
                         <div className="md:col-span-9">
                             <PortfolioCard
                                 image={imgImage14}
-                                className="h-[400px]"
+                                className="h-[410px]"
                                 onClick={() => navigate('/production')}
                             />
                         </div>
@@ -213,7 +211,27 @@ export function Home() {
                 <div className="max-w-[1200px] mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
                         {/* Main heading for mobile */}
-                        <div className="md:hidden col-span-1 text-center mb-6 ">
+
+
+                        <div className="md:col-span-6">
+                            <div className="relative h-[310px] md:h-[410px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)] group">
+                                <img
+                                    src={imgImage18}
+                                    alt="Let's Work"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
+                                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                                    <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
+                                        Stills that reflect presence, texture, and natural style.
+                                        Capturing moments off-set and off-guard.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Main heading for mobile - Moved between cards */}
+                        <div className="md:hidden col-span-1 text-center py-6">
                             <h2 className="font-['Inter:Bold',sans-serif] text-[40px] md:text-[56px] text-white leading-tight mb-6 ">
                                 Let's Work,
                                 <br />
@@ -230,23 +248,6 @@ export function Home() {
                             >
                                 Contact Now
                             </button>
-                        </div>
-
-                        <div className="md:col-span-6">
-                            <div className="relative h-[400px] md:h-[630px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)] group">
-                                <img
-                                    src={imgImage18}
-                                    alt="Let's Work"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
-                                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                                    <p className="font-['Inter:Light',sans-serif] text-base md:text-[22px] text-white tracking-[-0.44px]">
-                                        Stills that reflect presence, texture, and natural style.
-                                        Capturing moments off-set and off-guard.
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                         {/* Floating CTA Text - Desktop only */}
                         <div className="hidden md:flex md:col-span-3 items-center">
@@ -270,7 +271,7 @@ export function Home() {
                             </div>
                         </div>
                         <div className="md:col-span-3">
-                            <div className="relative h-[400px] md:h-[630px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)]">
+                            <div className="relative h-[310px] md:h-[410px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)]">
                                 <img
                                     src={imgImage24}
                                     alt="I'm In"

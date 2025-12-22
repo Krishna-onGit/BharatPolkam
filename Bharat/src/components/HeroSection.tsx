@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import heroImg from "../assets/a646bbb4d6fcdaf85d12e4939e9e530c83df9f16.png";
-import arrowIcon from "../assets/f6f1e1dc19a712398208a43583dabbd5babb46fc.png";
+
 
 export function HeroSection() {
   const [revealComplete, setRevealComplete] = useState(false);
@@ -146,31 +146,7 @@ export function HeroSection() {
             </motion.p>
           </div>
 
-          <div className="flex items-end justify-end pb-10 md:pb-0 ">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{
-                opacity: revealComplete ? 1 : 0,
-                y: revealComplete ? 0 : 20,
-              }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="font-['PP_Neue_Montreal:Book',sans-serif] text-xs md:text-sm lg:text-lg text-white/80 leading-relaxed tracking-wide whitespace-nowrap"
-            >
-              {isTouch ? (
-                <span role="button" aria-label="Tap to explore">
-                  <img
-                    src={arrowIcon}
-                    alt=""
-                    className="w-[20px] h-[20px] animate-bounce inline-block mr-2 md:mr-3 rotate-90 "
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Tap to explore</span>
-                </span>
-              ) : (
-                "Scroll to Explore ↓"
-              )}
-            </motion.p>
-          </div>
+
 
           {/* extra details revealed on tap for mobile (or remain visible on desktop) */}
           {/*

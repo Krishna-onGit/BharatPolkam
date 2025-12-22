@@ -72,7 +72,7 @@ export function ProjectsGrid({ category }: ProjectsGridProps) {
     return (
         <>
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-4 md:gap-6 lg:gap-8 px-6 md:px-[120px] py-8 md:py-12 max-w-7xl mx-auto auto-rows-[300px]"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-4 md:gap-6 lg:gap-8 px-6 md:px-[120px] pb-8 pt-2 md:pb-12 md:pt-4 max-w-7xl mx-auto auto-rows-[300px]"
                 variants={container}
                 initial="hidden"
                 whileInView="show"

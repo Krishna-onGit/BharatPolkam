@@ -19,11 +19,31 @@ export const sectionBackgrounds: Record<ProjectCategory, string> = {
     production: productionBg,
 };
 
+// Start: Dynamic Image Loading Logic
+const projectImages = import.meta.glob('../assets/projectimgs/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' });
+
+export function getProjectImage(title: string): string | undefined {
+    // Navigate through the glob results to find a matching filename
+    for (const path in projectImages) {
+        // Extract filename from path (e.g., "../assets/projectimgs/My Project.jpg" -> "My Project.jpg")
+        const fileName = path.split('/').pop();
+        if (!fileName) continue;
+
+        // Check if the filename starts with the exact title followed by a dot (extension)
+        // This ensures "Project A" matches "Project A.jpg" but not "Project A Part 2.jpg"
+        if (fileName.toLowerCase().startsWith(`${title.toLowerCase()}.`)) {
+            return projectImages[path] as string;
+        }
+    }
+    return undefined;
+}
+// End: Dynamic Image Loading Logic
+
 export const projects: Project[] = [
     // Direction
     {
         id: 'd1',
-        title: 'Ad1Shubman × Bowlers Announcement Film',
+        title: 'Shubman × Bowlers Announcement Film',
         subtitle: 'Gill Goes Bowler Mode',
         link: 'https://www.instagram.com/reel/DPjP0kUiHaX/?igsh=MWJlZGJnbGpvZHhucw==',
         category: 'direction',
@@ -31,7 +51,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd2',
-        title: 'Ad2 Battleground Season 1',
+        title: 'Battleground Season 1',
         subtitle: 'Campaign Launch',
         link: 'https://share.google/X7OFihMTKfQtas9r7',
         category: 'direction',
@@ -39,7 +59,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd3',
-        title: 'Ad3 Shiny Coat Film',
+        title: 'Shiny Coat Film',
         subtitle: 'Played in theatres and OTT',
         link: 'https://www.instagram.com/reel/DSFhPfgiO87/?igsh=MXdxbnh2NXNtbXFqeA==',
         category: 'direction',
@@ -47,7 +67,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd4',
-        title: 'Ad4 Alex to the Rescue Film',
+        title: 'Alex to the Rescue Film',
         subtitle: 'Played in theatres and OTT',
         link: 'https://www.instagram.com/reel/DRhNVEaiPif/?igsh=MWxwaTdkbDFodGJrbQ==',
         category: 'direction',
@@ -55,7 +75,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd5',
-        title: 'Ad5 Aar Paar Footwear TVC Film',
+        title: 'Aar Paar Footwear TVC Film',
         subtitle: 'Commercial',
         link: 'https://www.instagram.com/reel/DMhR7VRos-f/?igsh=MXM2NnM5OXkzanRwZg==',
         category: 'direction',
@@ -63,7 +83,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd6',
-        title: 'Ad6 Aar Paar Footwear TVC Film',
+        title: 'Aar Paar Footwear TVC Film 2',
         subtitle: 'Campaign Variation',
         link: 'https://www.instagram.com/reel/DLpK_5gIA8g/?igsh=MW1oaWd5MTV1NTM4cw==',
         category: 'direction',
@@ -71,7 +91,7 @@ export const projects: Project[] = [
     },
     {
         id: 'd7',
-        title: 'Ad7 Aar Paar Footwear TVC Film',
+        title: 'Aar Paar Footwear TVC Film 3',
         subtitle: 'Campaign Variation 2',
         link: 'https://www.instagram.com/reel/DMhTJmqo_xz/?igsh=azI0c2huYWoyZTQ1',
         category: 'direction',
@@ -113,7 +133,7 @@ export const projects: Project[] = [
     },
     {
         id: 'p5',
-        title: 'Sunny Mitthu Pilot Episode',
+        title: 'Sunny Mitthu Pilot Episode Friend Role',
         subtitle: 'Friend Role',
         link: 'https://youtu.be/5uhdqfHWuAA?si=uMVDVZ7DsDBIzZ3V',
         category: 'performance',
@@ -129,7 +149,7 @@ export const projects: Project[] = [
     },
     {
         id: 'p7',
-        title: 'Sunny Mitthu Pilot Episode',
+        title: 'Sunny Mitthu Pilot Episode Short Scene',
         subtitle: 'Short Scene',
         link: 'https://www.instagram.com/reel/DJ3kGR7h6-M/?igsh=NmZudm5zZDBxeW9m',
         category: 'performance',

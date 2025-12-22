@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { Project } from "../data/projects";
+import { Project, getProjectImage } from "../data/projects";
 
 interface BentoPortfolioCardProps {
     project: Project;
@@ -10,6 +10,8 @@ interface BentoPortfolioCardProps {
 
 export function BentoPortfolioCard({ project, bgImage, onClick }: BentoPortfolioCardProps) {
     const { title, subtitle } = project;
+    const projectImage = getProjectImage(title);
+    const displayImage = projectImage || bgImage;
 
     return (
         <motion.div
@@ -31,7 +33,7 @@ export function BentoPortfolioCard({ project, bgImage, onClick }: BentoPortfolio
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-out group-hover:scale-105"
-                style={{ backgroundImage: `url(${bgImage})` }}
+                style={{ backgroundImage: `url(${displayImage})` }}
             />
 
             {/* Overlay - Bottom Gradient */}

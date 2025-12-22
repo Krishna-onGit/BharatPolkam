@@ -4,10 +4,13 @@ import { Direction } from "./pages/Direction";
 import { Performance } from "./pages/Performance";
 import { Production } from "./pages/Production";
 
+import { ScrollToTop } from "./components/ScrollToTop";
+
 export default function App() {
   return (
     <div className="bg-black min-h-screen">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/direction" element={<Direction />} />
