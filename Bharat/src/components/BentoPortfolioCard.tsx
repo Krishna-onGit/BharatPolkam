@@ -9,7 +9,7 @@ interface BentoPortfolioCardProps {
 }
 
 export function BentoPortfolioCard({ project, bgImage, onClick }: BentoPortfolioCardProps) {
-    const { title, subtitle } = project;
+    const { title, subtitle, style, imageClassName } = project;
     const projectImage = getProjectImage(title);
     const displayImage = projectImage || bgImage;
 
@@ -19,11 +19,8 @@ export function BentoPortfolioCard({ project, bgImage, onClick }: BentoPortfolio
                 e.preventDefault();
                 onClick(project);
             }}
-            className="group relative overflow-hidden rounded-[12px] shadow-lg cursor-pointer hover:shadow-2xl hover:shadow-black/50 transition-shadow duration-300"
+            className="group relative overflow-hidden rounded-[12px] shadow-lg cursor-pointer hover:shadow-2xl hover:shadow-black/50 transition-shadow duration-300 w-full h-full"
             style={{
-                height: '100%',
-                minHeight: '250px',
-                borderRadius: '12px',
                 // Fix for border-radius clipping with transforms
                 WebkitMaskImage: '-webkit-radial-gradient(white, black)'
             }}
@@ -31,9 +28,11 @@ export function BentoPortfolioCard({ project, bgImage, onClick }: BentoPortfolio
             transition={{ duration: 0.2, ease: "easeOut" }}
         >
             {/* Background Image */}
-            <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-out group-hover:scale-105"
-                style={{ backgroundImage: `url(${displayImage})` }}
+            <img
+                src={displayImage}
+                alt={title}
+                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 ${imageClassName || ''}`}
+                style={style}
             />
 
             {/* Overlay - Bottom Gradient */}

@@ -11,6 +11,8 @@ export interface Project {
     link?: string;
     category: ProjectCategory;
     className?: string; // For grid spans
+    style?: React.CSSProperties;
+    imageClassName?: string;
 }
 
 export const sectionBackgrounds: Record<ProjectCategory, string> = {
@@ -47,7 +49,7 @@ export const projects: Project[] = [
         subtitle: 'Gill Goes Bowler Mode',
         link: 'https://www.instagram.com/reel/DPjP0kUiHaX/?igsh=MWJlZGJnbGpvZHhucw==',
         category: 'direction',
-        className: 'md:col-span-2 md:row-span-2', // Large item
+        className: 'md:col-span-2 md:row-span-4', // Large (Top Left)
     },
     {
         id: 'd2',
@@ -55,7 +57,7 @@ export const projects: Project[] = [
         subtitle: 'Campaign Launch',
         link: 'https://share.google/X7OFihMTKfQtas9r7',
         category: 'direction',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-2 md:row-span-4', // Large (Top Right)
     },
     {
         id: 'd3',
@@ -63,7 +65,7 @@ export const projects: Project[] = [
         subtitle: 'Played in theatres and OTT',
         link: 'https://www.instagram.com/reel/DSFhPfgiO87/?igsh=MXdxbnh2NXNtbXFqeA==',
         category: 'direction',
-        className: 'md:col-span-1 md:row-span-2', // Tall item
+        className: 'md:col-span-2 md:row-span-2', // Wide (Bottom Left)
     },
     {
         id: 'd4',
@@ -71,7 +73,7 @@ export const projects: Project[] = [
         subtitle: 'Played in theatres and OTT',
         link: 'https://www.instagram.com/reel/DRhNVEaiPif/?igsh=MWxwaTdkbDFodGJrbQ==',
         category: 'direction',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Bottom Mid)
     },
     {
         id: 'd5',
@@ -79,7 +81,7 @@ export const projects: Project[] = [
         subtitle: 'Commercial',
         link: 'https://www.instagram.com/reel/DLpK_5gIA8g/?igsh=MW1oaWd5MTV1NTM4cw==',
         category: 'direction',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Bottom Right)
     },
 
     // Performance
@@ -89,7 +91,7 @@ export const projects: Project[] = [
         subtitle: 'Music Video',
         link: 'https://youtu.be/0SQrgvVDIFQ?si=3gyXruhG4pw4zSoN',
         category: 'performance',
-        className: 'md:col-span-2 md:row-span-1', // Wide
+        className: 'md:col-span-2 md:row-span-2', // Wide (Row 1 Left)
     },
     {
         id: 'p2',
@@ -97,7 +99,7 @@ export const projects: Project[] = [
         subtitle: 'Short Film',
         link: 'https://youtu.be/c9xsRG0sIgk?si=w9gOlmghQ4NyXSmn',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Row 1 Mid)
     },
     {
         id: 'p3',
@@ -105,7 +107,8 @@ export const projects: Project[] = [
         subtitle: 'Commercial',
         link: 'https://youtu.be/NV5gj-RS7o8?si=KMQ_FYCSzqokHjEU',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-2', // Tall
+        className: 'md:col-span-1 md:row-span-3', // Tall (Row 1 Right, Spans 1.5 standard rows)
+        style: { objectPosition: '-130px center' },
     },
     {
         id: 'p4',
@@ -113,7 +116,7 @@ export const projects: Project[] = [
         subtitle: 'Dramatic Scene',
         link: 'https://youtube.com/shorts/k842ZdhMWDI?si=LVok3swA5pq6uFzn',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Row 2 Left)
     },
     {
         id: 'p5',
@@ -121,7 +124,7 @@ export const projects: Project[] = [
         subtitle: 'Action',
         link: 'https://youtu.be/62Jr53F91QI?si=nqZehdL_aZDk36wg',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Row 2 Mid)
     },
     {
         id: 'p6',
@@ -129,23 +132,7 @@ export const projects: Project[] = [
         subtitle: 'Commercial',
         link: 'https://youtu.be/eFk191a8t9w',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
-    },
-    {
-        id: 'p7',
-        title: 'CELLO PEN AD',
-        subtitle: 'Commercial',
-        link: 'https://youtu.be/DbLOr8ie9Cw',
-        category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
-    },
-    {
-        id: 'p8',
-        title: 'MEN WILL BE MEN ADD',
-        subtitle: 'Commercial',
-        link: 'https://youtu.be/Uw5zdIztiG0',
-        category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-2', // Small (Row 2 Right)
     },
     {
         id: 'p9',
@@ -153,7 +140,23 @@ export const projects: Project[] = [
         subtitle: 'Short Scene',
         link: 'https://www.instagram.com/reel/DJ3kGR7h6-M/?igsh=NmZudm5zZDBxeW9m',
         category: 'performance',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-3', // Tall (Row 3 Right, Spans 1.5 standard rows)
+    },
+    {
+        id: 'p7',
+        title: 'CELLO PEN AD',
+        subtitle: 'Commercial',
+        link: 'https://youtu.be/DbLOr8ie9Cw',
+        category: 'performance',
+        className: 'md:col-span-1 md:row-span-2', // Small (Row 3 Left)
+    },
+    {
+        id: 'p8',
+        title: 'MEN WILL BE MEN ADD',
+        subtitle: 'Commercial',
+        link: 'https://youtu.be/Uw5zdIztiG0',
+        category: 'performance',
+        className: 'md:col-span-2 md:row-span-2', // Wide (Row 3 Mid)
     },
 
     // Production
@@ -163,7 +166,8 @@ export const projects: Project[] = [
         subtitle: 'Event Coverage',
         link: undefined, // No link in MD
         category: 'production',
-        className: 'md:col-span-2 md:row-span-2',
+        className: 'md:col-span-1 md:row-span-3', // Tall in 3-col grid (Calculated to 498px)
+        imageClassName: 'object-bottom md:object-center',
     },
     {
         id: 'pr2',
@@ -171,7 +175,7 @@ export const projects: Project[] = [
         subtitle: 'Reality Show',
         link: 'https://www.instagram.com/p/C3X7fPIRL4x/?igsh=M3Z5am53NnFsZzE4',
         category: 'production',
-        className: 'md:col-span-1 md:row-span-2',
+        className: 'md:col-span-1 md:row-span-3', // Tall in 3-col grid (Calculated to 498px)
     },
     {
         id: 'pr3',
@@ -179,6 +183,6 @@ export const projects: Project[] = [
         subtitle: 'Show Coverage',
         link: 'https://share.google/images/vllmIhIvdF4qqgha1',
         category: 'production',
-        className: 'md:col-span-1 md:row-span-1',
+        className: 'md:col-span-1 md:row-span-3', // Tall in 3-col grid (Calculated to 498px)
     },
 ];
