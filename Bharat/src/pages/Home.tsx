@@ -331,8 +331,8 @@ export function Home() {
                                     Let's Work Together
                                 </p>
                                 <div className="flex flex-wrap gap-4 md:gap-6 text-base md:text-[22px] text-white font-['Inter:Regular',sans-serif] tracking-[-0.44px]">
-                                    <p>Email: yourmail@example.com</p>
-                                    <p>Phone: +91 99999 99999</p>
+                                    <p>Email: bharatpolkam@gmail.com</p>
+                                    <p>Phone: +91 9321445375</p>
                                 </div>
                             </div>
 

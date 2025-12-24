@@ -41,7 +41,7 @@ function Frame10() {
 function Frame11() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-justify text-nowrap text-white tracking-[-0.44px] whitespace-pre">Email: yourmail@example.com</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-justify text-nowrap text-white tracking-[-0.44px] whitespace-pre">Email: bharatpolkam@gmail.com</p>
     </div>
   );
 }
@@ -49,7 +49,7 @@ function Frame11() {
 function Frame12() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-justify text-nowrap text-white tracking-[-0.44px] whitespace-pre">Phone: +91 99999 99999</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-justify text-nowrap text-white tracking-[-0.44px] whitespace-pre">Phone: +91 9321445375</p>
     </div>
   );
 }
