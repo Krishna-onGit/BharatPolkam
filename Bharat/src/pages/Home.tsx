@@ -31,7 +31,7 @@ export function Home() {
             {/* Creative / Assistant Director Section */}
             <ParallaxSection
                 id="direction"
-                className="py-24 px-8 md:px-[120px]"
+                className="py-10 px-8 md:px-[120px]"
                 speed={0.3}
             >
                 <div className="max-w-[1200px] mx-auto">
@@ -67,7 +67,7 @@ export function Home() {
             </ParallaxSection>
 
             {/* Available for Direction - Acting - Casting Band */}
-            <ParallaxSection className="py-24 px-8 md:px-[120px]" speed={0.4}>
+            <ParallaxSection className="py-10 px-8 md:px-[120px]" speed={0.4}>
                 <div className="max-w-[1200px] mx-auto">
                     <div className="relative h-[400px] md:h-[600px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)]">
                         <img
@@ -100,7 +100,7 @@ export function Home() {
             {/* On Screen Section */}
             <ParallaxSection
                 id="performance"
-                className="py-24 px-8 md:px-[120px]"
+                className="py-10 px-8 md:px-[120px]"
                 speed={0.35}
             >
                 <div className="max-w-[1200px] mx-auto">
@@ -147,7 +147,7 @@ export function Home() {
             {/* Casting / Production Management Section */}
             <ParallaxSection
                 id="production"
-                className="py-24 px-8 md:px-[120px]"
+                className="py-10 px-8 md:px-[120px]"
                 speed={0.3}
             >
                 <div className="max-w-[1200px] mx-auto">
@@ -207,7 +207,7 @@ export function Home() {
             </ParallaxSection>
 
             {/* Final CTA Section */}
-            <ParallaxSection className="py-24 px-8 md:px-[120px]" speed={0.25}>
+            <ParallaxSection className="py-10 px-8 md:px-[120px]" speed={0.25}>
                 <div className="max-w-[1200px] mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 ">
                         {/* Main heading for mobile */}
@@ -291,7 +291,7 @@ export function Home() {
             </ParallaxSection>
 
             {/* Footer / About Section */}
-            <section id="about" className="py-24 px-8 md:px-[120px] bg-black">
+            <section id="about" className="py-10 px-8 md:px-[120px] bg-black">
                 <div className="max-w-[1200px] mx-auto">
                     <div className="bg-[#111111] rounded-[18px] p-6 md:p-12 shadow-[0px_0px_30px_0px_rgba(120,120,120,0.1)] relative">
                         {/* Vertical text on left */}

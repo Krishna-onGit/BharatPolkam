@@ -97,7 +97,7 @@ export const projects: Project[] = [
         id: 'p2',
         title: 'Chakva Shortfilm',
         subtitle: 'Short Film',
-        link: 'https://youtu.be/c9xsRG0sIgk?si=w9gOlmghQ4NyXSmn',
+        link: 'https://www.instagram.com/reel/DL7Xlj_vvYv/?igsh=cDhrYWwxbWZlcG5k',
         category: 'performance',
         className: 'md:col-span-1 md:row-span-2', // Small (Row 1 Mid)
     },
